@@ -1,0 +1,176 @@
+@font-face {
+  font-family: 'Myriad Set Pro';
+  font-style: normal;
+  font-weight: 100;
+  src: url('fonts/MyriadSetPro-Thin.woff') format('woff'), url('fonts/MyriadSetPro-Thin.ttf') format('truetype');
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea {
+  color: #FFF;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  display: table;
+}
+
+body {
+  font-family: 'Myriad Set Pro', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 100;
+  font-size: 15pt;
+  line-height: 18pt;
+  text-align: center;
+  background-color: #000;
+  background-image: -webkit-gradient(
+          linear,
+          left top,
+          left bottom,
+          color-stop(0.25, #060709),
+          color-stop(0.5, #212328),
+          color-stop(0.75, #424448),
+          color-stop(1, #686A6D)
+  );
+  background-image: -o-linear-gradient(bottom, #060709 25%, #212328 50%, #424448 75%, #686A6D 100%);
+  background-image: -moz-linear-gradient(bottom, #060709 25%, #212328 50%, #424448 75%, #686A6D 100%);
+  background-image: -webkit-linear-gradient(bottom, #060709 25%, #212328 50%, #424448 75%, #686A6D 100%);
+  background-image: -ms-linear-gradient(bottom, #060709 25%, #212328 50%, #424448 75%, #686A6D 100%);
+  background-image: linear-gradient(to bottom, #060709 25%, #212328 50%, #424448 75%, #686A6D 100%);
+  display: table-cell;
+  vertical-align: middle;
+}
+
+h1 {
+  font-size: 15pt;
+  line-height: 18pt;
+  font-weight: 100;
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+
+#localtime {
+  font-size: 45pt;
+  line-height: 48pt;
+  font-weight: 100;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 45pt;
+  line-height: 48pt;
+  font-weight: 100;
+  margin-top: 5px;
+  margin-bottom: 16px;
+}
+
+h3 {
+  font-size: 15pt;
+  line-height: 18pt;
+  font-weight: 100;
+  margin-top: 10px;
+  margin-bottom: 4px;
+}
+
+h4 {
+  font-size: 15pt;
+  line-height: 18pt;
+  font-weight: 100;
+  margin-top: 26px;
+  margin-bottom: 10px;
+}
+
+h5 {
+  font-size: 15pt;
+  font-weight: 100;
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+#dark {
+  color: #B3B3B3;
+}
+
+#error_message {
+  border-left: 5px solid #bb3;
+  border-right: 5px solid #bb3;
+  color: #770;
+}
+
+a:link, a:visited {
+  color: #FFF;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #dbdbdb;
+  text-decoration: none;
+}
+
+a:active {
+  color: #dbdbdb;
+  text-decoration: none;
+}
+
+.footer {
+  position: fixed;
+  margin-top: 0px;
+  bottom: 0px;
+  font-size: 8pt;
+  line-height: 9pt;
+  text-align: center;
+  color: #cccccc;
+  width: 100%;
+  margin-top: 100px;
+  margin-bottom: 10px;
+}
+
+.ics {
+  margin-left: 10px;
+  vertical-align: top;
+  width: 25px;
+}
+
+img {
+  border: 0px;
+}
+
+.countdown {
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.counteverest .ce-days,
+.counteverest .ce-hours,
+.counteverest .ce-minutes,
+.counteverest .ce-seconds {
+  font-size: 55pt;
+}
+
+.counteverest .col {
+  display: inline-block;
+}
+
+.counteverest .ce-days-label,
+.counteverest .ce-hours-label,
+.counteverest .ce-minutes-label,
+.counteverest .ce-seconds-label {
+  display: block;
+  margin-top: 20px;
+}
+
+.counteverest .col {
+  padding-bottom: 20px;
+  margin: 0 5px;
+  width: 105px;
+  text-align: center;
+}
