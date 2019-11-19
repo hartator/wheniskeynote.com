@@ -9,11 +9,11 @@ const
 // Format: YYYY (2020)
 year = 2019,
 // Format: MM (09) or M (9), both are valid 
-month = 09,
+month = 12,
 // Format: DD (09) or D (9), both are valid
-day = 10,  
+day = 2,  
 // Format: 0 - 24 / 5 == 5 AM / 17 == 5 PM 
-hour = 20,
+hour = 13,
 // Format: MM (09) or M (9), both are valid
 minute = 00;
 
@@ -21,4 +21,4 @@ minute = 00;
 * UPDATE UPCOMING EVENT NAME
 * --------------------------
 */
-const eventName = 'Apple iPhone 11 Launch Event';
+const eventName = 'Apple Special Event Honoring Favorite Apps and Games';
