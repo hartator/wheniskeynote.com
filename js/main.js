@@ -14,19 +14,18 @@ const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Frida
 
 // 7200000 = 2 hours
 if (distance < -7200001) {
-  $('#response').append('<h2>No event confirmed at this time :(</h2>');
+  document.getElementById('response').innerHTML += '<h2>No event confirmed at this time :(</h2>';
 } else if (distance > -7200000 && distance < 0) {
-  $('#response').append(eventHtml);
-  $('#days').html('00');
-  $('#hours').html('00');
-  $('#minutes').html('00');
-  $('#seconds').html('00');
+  document.getElementById('response').innerHTML += eventHtml;
+  document.getElementById('days').innerText = '00';
+  document.getElementById('hours').innerText = '00';
+  document.getElementById('minutes').innerText = '00';
+  document.getElementById('seconds').innerText = '00';
 } else {
-  $('#response').append(eventHtml);
+  document.getElementById('response').innerHTML += eventHtml;
   timer = setInterval(showRemaining, 1000);
+  createCalendar(eventName, start, end);
 }
-
-createCalendar(eventName, start, end);
 
 function showRemaining() {
   let now = new Date(),
@@ -44,13 +43,13 @@ function showRemaining() {
 console.log(days / 100)
 
   if(days / 100 < 1) {
-    $('#days').html(("0" + days).slice(-2));
+    document.getElementById('days').innerText = ("0" + days).slice(-2);
   } else {
-    $('#days').html(("0" + days).slice(-3));
+    document.getElementById('days').innerText = ("0" + days).slice(-3);
   }
-  $('#hours').html(("0" + hours).slice(-2));
-  $('#minutes').html(("0" + minutes).slice(-2));
-  $('#seconds').html(("0" + seconds).slice(-2));
+  document.getElementById('hours').innerText = ("0" + hours).slice(-2);
+  document.getElementById('minutes').innerText = ("0" + minutes).slice(-2);
+  document.getElementById('seconds').innerText = ("0" + seconds).slice(-2);
 }
 
 function createCalendar(title, startDate, endDate) {
@@ -71,5 +70,7 @@ function createCalendar(title, startDate, endDate) {
       'END:VCALENDAR'].join('\n')
   );
 
-  $("#localtime").append('<a href="' + href + '"><img class="ics" src="./images/cal.svg" alt=""/></a>');
+  document.getElementById('localtime').innerHTML += '<a href="' + href + '"><img class="ics" src="./images/cal.svg" alt=""/></a>';
 }
+
+document.getElementById('year').innerText += new Date().getFullYear();
