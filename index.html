@@ -1,18 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-  <meta name="description" content="Discover when Apple&#39;s next keynote / product event is happening!">
+  <meta charset="utf-8">
+
   <meta name="keywords" content="apple, event, keynote, next, address">
   <title>When is the next Apple keynote?</title>
+  <meta name="description" content="Discover when Apple&#39;s next keynote / product event is happening!">
+  <link rel="canonical" href="http://wheniskeynote.com/" />
+
+  <meta property="og:title" content="When is the next Apple keynote?">
+  <meta property="og:description" content="Discover when Apple&#39;s next keynote / product event is happening!">
+  <meta property="og:url" content="http://wheniskeynote.com/">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="website">
+
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="When is the next Apple keynote?">
+  <meta property="twitter:description" content="Discover when Apple&#39;s next keynote / product event is happening!">
+  <meta property="twitter:url" content="http://wheniskeynote.com/">
+
+  <meta name="robots" content="index, follow">
 
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" href="images/keynote_icon57x57.png">
   <link rel="apple-touch-icon" sizes="76x76" href="images/keynote_icon76x76.png">
   <link rel="apple-touch-icon" sizes="120x120" href="images/keynote_icon120x120.png">
   <link rel="apple-touch-icon" sizes="176x175" href="images/keynote_icon176x176.png">
-  <link rel="canonical" href="http://wheniskeynote.com/" />
+
+  <link rel="preload" as="style" href="style/main.css">
+  <link rel="preload" as="script" href="js/addNewEvent.js">
+  <link rel="preload" as="script" href="js/main.js">
 
   <link rel="stylesheet" href="style/main.css">
+  <script src="js/addNewEvent.js" defer></script>
+  <script src="js/main.js" defer></script>
 </head>
 <body class="counteverest">
   <noscript>Please enable JavaScript in your browser and reload this page.</noscript>
@@ -21,13 +42,12 @@
       <h1 id="dark">The next Apple keynote address / product event is:</h1>
     </div>
     <div class="footer">
-      <p>Help us keep this website up to date. Add the event by making a PR request on <a href="https://github.com/hartator/wheniskeynote.com">GitHub</a>
-        <br>Brought by <a href="https://serpapi.com">Serp Api</a>: <a href="https://serpapi.com">Google Search API</a><br>
-        &copy; <span id="year"></span> wheniskeynote.com</p>
-      </div>
+      <p>
+        Help us keep this website up to date. Add the event by making a PR request on <a href="https://github.com/hartator/wheniskeynote.com">GitHub</a><br>
+        Brought by <a href="https://serpapi.com">Serp Api</a>: <a href="https://serpapi.com">Google Search API</a><br>
+        &copy; <span id="year"></span> wheniskeynote.com
+      </p>
     </div>
-
-    <script src="js/addNewEvent.js"></script>
-    <script src="js/main.js"></script>
-  </body>
-  </html>
+  </div>
+</body>
+</html>
