@@ -21,4 +21,4 @@ minute = 00;
 * UPDATE UPCOMING EVENT NAME
 * --------------------------
 */
-const eventName = '(Rumored) Apple Silicon Mac Launch Event';
+const eventName = 'Apple Silicon Mac Launch Event';
