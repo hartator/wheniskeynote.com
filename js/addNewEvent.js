@@ -21,4 +21,4 @@ minute = 00;
 * UPDATE UPCOMING EVENT NAME
 * --------------------------
 */
-const eventName = 'One More Thing';
+const eventName = 'One more thing';
