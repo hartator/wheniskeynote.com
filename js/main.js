@@ -1,5 +1,5 @@
-let start = new Date(month + '/' + day + '/' + year + ' ' + hour + ':' + minute + ' GMT-0700'),
-    end = new Date(month + '/' + day + '/' + year + ' ' + (hour+2) + ':' + minute + ' GMT-0700'),
+let start = new Date(month + '/' + day + '/' + year + ' ' + hour + ':' + minute + ' PST'),
+    end = new Date(month + '/' + day + '/' + year + ' ' + (hour+2) + ':' + minute + ' PST'),
     now = new Date(),
     distance = start - now,
     _second = 1000,
