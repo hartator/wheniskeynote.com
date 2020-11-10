@@ -23,7 +23,7 @@ const MONTH_NAMES = [
   'December',
 ];
 
-const start = new Date(`${EVENT_MONTH}/${EVENT_DAY}/${EVENT_YEAR} ${EVENT_HOUR}:${EVENT_MINUTE} GMT-0700`);
+const start = new Date(`${EVENT_MONTH}/${EVENT_DAY}/${EVENT_YEAR} ${EVENT_HOUR}:${EVENT_MINUTE} PST`);
 const end = new Date(start.getTime() + EVENT_DURATION);
 
 let now = new Date();
