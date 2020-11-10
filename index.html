@@ -15,20 +15,47 @@
   <link rel="stylesheet" href="style/main.css">
 </head>
 <body class="counteverest">
-	<noscript>Please enable JavaScript in your browser and reload this page.</noscript>
-	<div class="container">
-		<div id="response">
-			<h1 id="dark">The next Apple keynote address / product event is:</h1>
-		</div>
-		<div class="footer">
+  <noscript>Please enable JavaScript in your browser and reload this page.</noscript>
+  <div class="container">
+    <div id="response">
+      <h1 id="dark">The next Apple keynote address / product event is:</h1>
+
+      <div id="status-active" style="display: none;">
+        <h2>
+          <a href="https://www.apple.com/apple-events/" target="_blank" id="event-name"></a>
+        </h2>
+        <h3 id="dark">In your time zone, this event will be held on:</h3>
+        <time id="localtime"></time>
+        <h4 id="dark">Time remaining:</h4>
+        <div id="countdown" class="countdown">
+          <div class="col col1 days">
+            <span id="days" class="ce-days time-cont"></span>
+            <span class="ce-days-label">Days</span>
+          </div>
+          <div class="col col2">
+            <span id="hours" class="ce-hours time-cont"></span>
+            <span class="ce-hours-label">Hours</span>
+          </div>
+          <div class="col col3">
+            <span id="minutes" class="ce-minutes time-cont"></span>
+            <span class="ce-minutes-label">Minutes</span>
+          </div>
+          <div class="col col4">
+            <span id="seconds" class="ce-seconds time-cont"></span>
+            <span class="ce-seconds-label">Seconds</span>
+          </div>
+      </div>
+
+      <h2 id="status-inactive" style="display: none;">No event confirmed at this time :(</h2>
+    </div>
+    <div class="footer">
       <p>Help us keep this website up to date. Add the event by making a PR on <a href="https://github.com/hartator/wheniskeynote.com">GitHub</a>
       <br>Brought by <a href="https://serpapi.com">Serp Api</a>: <a href="https://serpapi.com">Google Search API</a><br>
       &copy; <script>document.write(new Date().getFullYear())</script> wheniskeynote.com</p>
-		</div>
-	</div>
+    </div>
+  </div>
 
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-	<script src="js/addNewEvent.js"></script>
-	<script src="js/main.js"></script>
+  <script src="js/addNewEvent.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
