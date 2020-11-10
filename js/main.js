@@ -23,6 +23,7 @@ if (distance < -7200001) {
   $('#seconds').html('00');
 } else {
   $('#response').append(eventHtml);
+  showRemaining();
   timer = setInterval(showRemaining, 1000);
 }
 
