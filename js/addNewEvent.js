@@ -21,4 +21,4 @@ minute = 00;
 * UPDATE UPCOMING EVENT NAME
 * --------------------------
 */
-const eventName = 'Spring Event';
+const eventName = 'Spring Loaded';
