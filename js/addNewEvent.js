@@ -6,6 +6,8 @@
 *
 */
 const 
+// The time zone when the event will be held. Format: time zone identifier (e.g., "PDT" or "PST")
+timeZone = 'PDT',
 // Format: YYYY (2020)
 year = 2021,
 // Format: MM (09) or M (9), both are valid 
