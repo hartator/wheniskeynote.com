@@ -1,63 +1,90 @@
-let start = new Date(month + '/' + day + '/' + year + ' ' + hour + ':' + minute + ' ' + timeZone),
-    end = new Date(month + '/' + day + '/' + year + ' ' + (hour+2) + ':' + minute + ' ' + timeZone),
-    now = new Date(),
-    distance = start - now,
-    _second = 1000,
-    _minute = _second * 60,
-    _hour = _minute * 60,
-    _day = _hour * 24,
-    timer;
+const DAY_NAMES = [
+  'Sunday',
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday',
+];
 
-const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-      monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
-      eventHtml = '<h2><a href="https://www.apple.com/apple-events/" target="_blank">' + eventName + '</a></h2><h3 id="dark">In your time zone, this event will be held on:</h3><div id="localtime">' + dayNames[start.getDay()] + ', ' + monthNames[start.getMonth()] + ' ' + start.getDate() + ' at ' + ("0" + start.getHours()).slice(-2) + ':' + ("0" + start.getMinutes()).slice(-2) + '</div><h4 id="dark">Time remaining:</h4><div id="countdown" class="countdown"><div class="col col1 days"><span id="days" class="ce-days time-cont"></span><span class="ce-days-label">Days</span></div><div class="col col2"><span id="hours" class="ce-hours time-cont"></span><span class="ce-hours-label">Hours</span></div><div class="col col3"><span id="minutes" class="ce-minutes time-cont"></span><span class="ce-minutes-label">Minutes</span></div><div class="col col4"><span id="seconds" class="ce-seconds time-cont"></span><span class="ce-seconds-label">Seconds</span></div>';
+const MONTH_NAMES = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
+];
 
-// 7200000 = 2 hours
-if (distance < -7200001) {
-  $('#response').append('<h2>No event confirmed at this time :(</h2>');
-} else if (distance > -7200000 && distance < 0) {
-  $('#response').append(eventHtml);
-  $('#days').html('00');
-  $('#hours').html('00');
-  $('#minutes').html('00');
-  $('#seconds').html('00');
-} else {
-  $('#response').append(eventHtml);
-  showRemaining();
-  timer = setInterval(showRemaining, 1000);
-}
+const start = new Date(`${EVENT_MONTH}/${EVENT_DAY}/${EVENT_YEAR} ${EVENT_HOUR}:${EVENT_MINUTE} ${EVENT_TIMEZONE}`);
+const end = new Date(start.getTime() + EVENT_DURATION);
 
-createCalendar(eventName, start, end);
+let timer;
+let now = new Date();
+let distance = start - now;
 
-function showRemaining() {
-  let now = new Date(),
-      distance = start - now;
+const $statusActive = document.getElementById('status-active');
+const $eventName = document.getElementById('event-name');
+const $localtime = document.getElementById('localtime');
+const $days = document.getElementById('days');
+const $hours = document.getElementById('hours');
+const $minutes = document.getElementById('minutes');
+const $seconds = document.getElementById('seconds');
 
-  if (distance < 0) {
+const $statusInactive = document.getElementById('status-inactive');
+
+$eventName.innerText = EVENT_NAME;
+$localtime.innerText = `${DAY_NAMES[start.getDay()]}, ${MONTH_NAMES[start.getMonth()]} ${start.getDate()} at ${`0${start.getHours()}`.slice(-2)}:${`0${start.getMinutes()}`.slice(-2)}`;
+$localtime.dateTime = start.toISOString();
+
+const updateCounter = () => {
+  now = new Date();
+  distance = start - now;
+
+  if (distance < -EVENT_DURATION) {
+    $statusActive.style.display = 'none';
+    $statusInactive.style.display = 'block';
     clearInterval(timer);
     return;
   }
-  let days = Math.floor(distance / _day),
-      hours = Math.floor((distance % _day) / _hour),
-      minutes = Math.floor((distance % _hour) / _minute),
-      seconds = Math.floor((distance % _minute) / _second);
 
-console.log(days / 100)
+  $statusActive.style.display = 'block';
+  $statusInactive.style.display = 'none';
 
-  if(days / 100 < 1) {
-    $('#days').html(("0" + days).slice(-2));
-  } else {
-    $('#days').html(("0" + days).slice(-3));
+  if (distance < 0) {
+    $days.innerText = '00';
+    $hours.innerText = '00';
+    $minutes.innerText = '00';
+    $seconds.innerText = '00';
+    setTimeout(updateCounter, (-distance / 1000) | 0);
   }
-  $('#hours').html(("0" + hours).slice(-2));
-  $('#minutes').html(("0" + minutes).slice(-2));
-  $('#seconds').html(("0" + seconds).slice(-2));
-}
 
-function createCalendar(title, startDate, endDate) {
-  let startTime = startDate.toISOString().replace(/-|:|\.\d+/g, '');
-  let endTime = endDate.toISOString().replace(/-|:|\.\d+/g, '');
-  let href = encodeURI(
+  const seconds = Math.floor(distance / 1000) % 60;
+  const minutes = Math.floor(distance / 1000 / 60) % 60;
+  const hours = Math.floor(distance / 1000 / 60 / 60) % 60;
+  const days = Math.floor(distance / 1000 / 60 / 60 / 24);
+
+  if (days > 100) {
+    $days.innerText = `${days}`;
+  } else {
+    $days.innerText = `0${days}`.slice(-2);
+  }
+  $hours.innerText = `0${hours}`.slice(-2);
+  $minutes.innerText = `0${minutes}`.slice(-2);
+  $seconds.innerText = `0${seconds}`.slice(-2);
+};
+
+const createCalendar = (title, startDate, endDate) => {
+  const startTime = startDate.toISOString().replace(/-|:|\.\d+/g, '');
+  const endTime = endDate.toISOString().replace(/-|:|\.\d+/g, '');
+  const href = encodeURI(
     'data:text/calendar;charset=utf8,' + [
       'BEGIN:VCALENDAR',
       'VERSION:2.0',
@@ -72,5 +99,12 @@ function createCalendar(title, startDate, endDate) {
       'END:VCALENDAR'].join('\n')
   );
 
-  $("#localtime").append('<a href="' + href + '"><img class="ics" src="./images/cal.svg" alt=""/></a>');
-}
+  const $link = document.createElement('a');
+  $link.href = href;
+  $link.innerHTML = '<img class="ics" src="./images/cal.svg" alt="" />';
+  $localtime.append($link);
+};
+
+updateCounter();
+timer = setInterval(updateCounter, 1000);
+createCalendar(EVENT_NAME, start, end);
