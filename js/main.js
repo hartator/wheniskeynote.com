@@ -23,9 +23,10 @@ const MONTH_NAMES = [
   'December',
 ];
 
-const start = new Date(`${EVENT_MONTH}/${EVENT_DAY}/${EVENT_YEAR} ${EVENT_HOUR}:${EVENT_MINUTE} PST`);
+const start = new Date(`${EVENT_MONTH}/${EVENT_DAY}/${EVENT_YEAR} ${EVENT_HOUR}:${EVENT_MINUTE} ${EVENT_TIMEZONE}`);
 const end = new Date(start.getTime() + EVENT_DURATION);
 
+let timer;
 let now = new Date();
 let distance = start - now;
 
