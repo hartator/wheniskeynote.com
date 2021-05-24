@@ -24,4 +24,4 @@ minute = 00;
 * UPDATE UPCOMING EVENT NAME
 * --------------------------
 */
-const eventName = 'Spring Loaded';
+const eventName = 'WWDC 2021';
