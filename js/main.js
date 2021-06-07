@@ -27,7 +27,7 @@ if (distance < -7200001) {
   timer = setInterval(showRemaining, 1000);
 }
 
-createCalendar(eventName, start, end);
+createCalendar();
 
 function showRemaining() {
   let now = new Date(),
@@ -42,8 +42,6 @@ function showRemaining() {
       minutes = Math.floor((distance % _hour) / _minute),
       seconds = Math.floor((distance % _minute) / _second);
 
-console.log(days / 100)
-
   if(days / 100 < 1) {
     $('#days').html(("0" + days).slice(-2));
   } else {
@@ -54,23 +52,6 @@ console.log(days / 100)
   $('#seconds').html(("0" + seconds).slice(-2));
 }
 
-function createCalendar(title, startDate, endDate) {
-  let startTime = startDate.toISOString().replace(/-|:|\.\d+/g, '');
-  let endTime = endDate.toISOString().replace(/-|:|\.\d+/g, '');
-  let href = encodeURI(
-    'data:text/calendar;charset=utf8,' + [
-      'BEGIN:VCALENDAR',
-      'VERSION:2.0',
-      'BEGIN:VEVENT',
-      'URL:' + document.URL,
-      'DTSTART:' + (startTime || ''),
-      'DTEND:' + (endTime),
-      'SUMMARY:' + (title || ''),
-      'DESCRIPTION:' + (''),
-      'LOCATION:' + (''),
-      'END:VEVENT',
-      'END:VCALENDAR'].join('\n')
-  );
-
-  $("#localtime").append('<a href="' + href + '"><img class="ics" src="./images/cal.svg" alt=""/></a>');
+function createCalendar() {
+  $("#localtime").append('<a href="' + calendarUrl + '"><img class="ics" src="./images/cal.svg" alt=""/></a>');
 }

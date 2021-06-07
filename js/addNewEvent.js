@@ -1,21 +1,21 @@
 /* --------------------------
 * UPDATE UPCOMING EVENT DATE
-* -------------------------- 
+* --------------------------
 *
 * IMPORTANT: The date has to be in the Pacific Standard Time (PST) zone
 *
 */
-const 
+const
 // The time zone when the event will be held. Format: time zone identifier (e.g., "PDT" or "PST")
 timeZone = 'PDT',
 // Format: YYYY (2020)
 year = 2021,
 // The month as a number, not the index
-// Format: MM (09) or M (9), both are valid 
+// Format: MM (09) or M (9), both are valid
 month = 06,
 // Format: DD (09) or D (9), both are valid
-day = 07,  
-// Format: 0 - 24 / 5 == 5 AM / 17 == 5 PM 
+day = 07,
+// Format: 0 - 24 / 5 == 5 AM / 17 == 5 PM
 hour = 10,
 // Format: MM (09) or M (9), both are valid
 minute = 00;
@@ -25,3 +25,4 @@ minute = 00;
 * --------------------------
 */
 const eventName = 'Glow and behold.';
+const calendarUrl = 'https://www.apple.com/v/apple-events/home/q/built/assets/event.ics';
