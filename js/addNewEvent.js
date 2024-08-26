@@ -23,4 +23,4 @@ const // The time zone when the event will be held. Format: time zone identifier
  * UPDATE UPCOMING EVENT NAME
  * --------------------------
  */
-const eventName = 'Its Glowtime.';
+const eventName = "It's Glowtime.";
