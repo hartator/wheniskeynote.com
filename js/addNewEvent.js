@@ -6,7 +6,7 @@
  *
  */
 const // The time zone when the event will be held. Format: time zone identifier (e.g., "PDT" or "PST")
-	timeZone = 'PT',
+	timeZone = 'PDT',
 	// Format: YYYY (2020)
 	year = 2024,
 	// The month as a number, not the index
@@ -15,7 +15,7 @@ const // The time zone when the event will be held. Format: time zone identifier
 	// Format: DD (09) or D (9), both are valid
 	day = 09,
 	// Format: 0 - 24 / 5 == 5 AM / 17 == 5 PM
-	hour = 18,
+	hour = 10,
 	// Format: MM (09) or M (9), both are valid
 	minute = 00;
 
