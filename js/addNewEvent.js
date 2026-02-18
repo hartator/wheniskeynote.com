@@ -6,16 +6,16 @@
  *
  */
 const // The time zone when the event will be held. Format: time zone identifier (e.g., "PDT" or "PST")
-	timeZone = 'PDT',
+	timeZone = 'EDT',
 	// Format: YYYY (2020)
-	year = 2025,
+	year = 2026,
 	// The month as a number, not the index
 	// Format: MM (09) or M (9), both are valid
-	month = 09,
+	month = 03,
 	// Format: DD (09) or D (9), both are valid
-	day = 09,
+	day = 04,
 	// Format: 0 - 24 / 5 == 5 AM / 17 == 5 PM
-	hour = 10,
+	hour = 09,
 	// Format: MM (09) or M (9), both are valid
 	minute = 00;
 
@@ -23,4 +23,4 @@ const // The time zone when the event will be held. Format: time zone identifier
  * UPDATE UPCOMING EVENT NAME
  * --------------------------
  */
-const eventName = "Awe dropping.";
+const eventName = "You're invited.";
