@@ -13,9 +13,9 @@ const // The time zone when the event will be held. Format: time zone identifier
 	// Format: MM (09) or M (9), both are valid
 	month = 10,
 	// Format: DD (09) or D (9), both are valid
-	day = 13,
+	day = 28,
 	// Format: 0 - 24 / 5 == 5 AM / 17 == 5 PM
-	hour = 6,
+	hour = 10,
 	// Format: MM (09) or M (9), both are valid
 	minute = 00;
 
@@ -23,4 +23,4 @@ const // The time zone when the event will be held. Format: time zone identifier
  * UPDATE UPCOMING EVENT NAME
  * --------------------------
  */
-const eventName = "Welcome home.";
+const eventName = "Pro and tell.";
